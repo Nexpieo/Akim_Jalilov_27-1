@@ -2,11 +2,11 @@
 
 {% block content %}
     <div style="display: flex; justify-content: space-evenly; flex-wrap: wrap">
-        {% for post in posts %}
+        {% for product in products %}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">{{ products.title }}</h5>
-                    <a href="#" class="card-link">More</a>
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <a href="/products/{{ product.id }}" class="card-link">More</a>
                 </div>
             </div>
         {% endfor %}
