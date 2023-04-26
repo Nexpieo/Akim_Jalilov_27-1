@@ -3,9 +3,6 @@ from datetime import datetime
 from products.models import Product
 
 
-# Create your views here.
-
-
 def hello_view(request):
     if request.method == 'GET':
         return HttpResponse('Hello! Its my project')
@@ -41,7 +38,8 @@ def product_detail_view(request, id):
         product = Product.objects.get(id=id)
 
         context = {
-            'product': product
+            'product': product,
+            'comments': product.review_set.all()
         }
 
         return render(request, 'products/detail.html', context=context)
